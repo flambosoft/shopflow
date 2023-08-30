@@ -1,0 +1,2 @@
+class ProductCharacteristic < ApplicationRecord
+end

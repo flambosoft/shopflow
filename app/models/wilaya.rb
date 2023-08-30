@@ -1,0 +1,2 @@
+class Wilaya < ApplicationRecord
+end

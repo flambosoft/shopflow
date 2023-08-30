@@ -1,0 +1,23 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  short_description: MyText
+  description: MyText
+  ingredients: MyText
+  enabled: false
+  description_ar: MyText
+  tags: MyText
+  reference: MyString
+  original_name: MyString
+
+two:
+  name: MyString
+  short_description: MyText
+  description: MyText
+  ingredients: MyText
+  enabled: false
+  description_ar: MyText
+  tags: MyText
+  reference: MyString
+  original_name: MyString

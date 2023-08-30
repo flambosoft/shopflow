@@ -1,0 +1,2 @@
+class ListProduct < ApplicationRecord
+end
