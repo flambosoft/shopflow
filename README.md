@@ -1,24 +1,52 @@
-# README
+All-rounded ecommerce built using rails
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Configuration
 
-Things you may want to cover:
 
-* Ruby version
+## Tool Versions
 
-* System dependencies
+* Ruby
+> ruby 3.2.2
 
-* Configuration
+* Rails
+> Rails 7.0.7.2
 
-* Database creation
+* Gem
+> 3.4.10
 
-* Database initialization
+* Bundler
+> Bundler version 2.4.10
 
-* How to run the test suite
+* Yarn
+> yarn 1.22.19
 
-* Services (job queues, cache servers, search engines, etc.)
+## Project Setup
 
-* Deployment instructions
+> bundle install
 
-* ...
+## Database setup
+
+> rails db:create
+
+> rails db:migrate
+
+## Build assets
+
+* Javascript
+> npm run build
+
+* CSS
+> npm run build:css
+ 
+---
+
+# Architecture
+...
+
+## Features
+
+* Admin
+  -...
+
+* User
+  -...
