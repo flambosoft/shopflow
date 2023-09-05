@@ -7,7 +7,8 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   namespace :admin do
-    root 'dashboard#index'
+    resources :dashboard
+    root to: "dashboard#index"
   end
 
 end

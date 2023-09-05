@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Shopflow</title>
+    <title>Shopflow Admin</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -16,7 +16,21 @@
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 
+    <%= render partial: "admin/partials/navbar" %>
+    <div class="flex pt-16 overflow-hidden bg-gray-50 dark:bg-gray-900">
 
-    <%= yield %>
+      <%= render partial: "admin/partials/sidebar" %>
+
+      <div id="main-content" class="relative w-full h-full overflow-y-auto bg-white lg:ml-64 dark:bg-gray-900">
+        <main>
+          <%= yield %>
+        </main>
+        <%= render partial: "admin/partials/footer" %>
+      </div>
+
+    </div>
+
+
+
   </body>
 </html>
