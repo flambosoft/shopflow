@@ -30,6 +30,14 @@ All-rounded ecommerce built using rails
 
 > rails db:migrate
 
+> rails db:seed
+
+
+demo user: superadmin@shopflow.com
+
+demo password: password
+
+
 ## Build assets
 
 * Javascript
