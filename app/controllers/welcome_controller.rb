@@ -1,14 +1,9 @@
 class WelcomeController < ApplicationController
-  def index
+  def index; end
 
-  end
-  def shop
+  def shop; end
 
-  end
-  def about
+  def about; end
 
-  end
-  def wishlist
-
-  end
+  def wishlist; end
 end

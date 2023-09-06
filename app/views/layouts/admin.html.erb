@@ -16,16 +16,16 @@
 <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p>
 
-<%= render partial: "admin/partials/navbar" %>
+<%= render partial: "layouts/admin_partials/navbar" %>
 <div class="flex pt-16 overflow-hidden bg-gray-50 dark:bg-gray-900">
 
-  <%= render partial: "admin/partials/sidebar" %>
+  <%= render partial: "layouts/admin_partials/sidebar" %>
 
   <div id="main-content" class="relative w-full h-full overflow-y-auto bg-white lg:ml-64 dark:bg-gray-900">
     <main>
       <%= yield %>
     </main>
-    <%= render partial: "admin/partials/footer" %>
+    <%= render partial: "layouts/admin_partials/footer" %>
   </div>
 
 </div>

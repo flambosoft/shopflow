@@ -6,7 +6,6 @@
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
   <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-  <%= stylesheet_link_tag "main", "data-turbo-track": "reload" %>
   <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
 </head>
 
@@ -15,9 +14,9 @@
 <!-- TODO: turn it into a toast message  -->
 <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p>
-<%= render partial: 'layouts/partials/header' %>
-<%= render partial: 'layouts/partials/navbar' %>
+<%= render partial: 'layouts/application_partials/header' %>
+<%= render partial: 'layouts/application_partials/navbar' %>
 <%= yield %>
-<%= render partial: 'layouts/partials/footer' %>
+<%= render partial: 'layouts/application_partials/footer' %>
 </body>
 </html>
