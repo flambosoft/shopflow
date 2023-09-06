@@ -11,4 +11,9 @@ Rails.application.routes.draw do
     root to: "dashboard#index"
   end
 
+  root "welcome#index"
+  get "/shop", to: "welcome#shop"
+  get "/about", to: "welcome#about"
+  get "/wishlist", to: "welcome#wishlist"
+
 end
