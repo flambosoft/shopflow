@@ -15,5 +15,6 @@ Rails.application.routes.draw do
   get "/shop", to: "welcome#shop"
   get "/about", to: "welcome#about"
   get "/wishlist", to: "welcome#wishlist"
+  get "/profile", to: "profile#index"
 
 end
