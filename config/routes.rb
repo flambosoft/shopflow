@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   devise_for :users
   devise_for :admins
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
@@ -17,5 +18,5 @@ Rails.application.routes.draw do
   get "/about", to: "welcome#about"
   get "/wishlist", to: "welcome#wishlist"
   get "/profile", to: "profile#index"
-
+  get "/cart", to: "welcome#cart"
 end
