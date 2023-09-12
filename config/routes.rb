@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-
-
   devise_for :users
   devise_for :admins
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
@@ -9,6 +7,8 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   namespace :admin do
+    resources :dashboard
+    resources :categories
     root to: "dashboard#index"
     resources :products
     resources :lists
