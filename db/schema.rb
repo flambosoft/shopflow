@@ -35,7 +35,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_18_094739) do
     t.string "slug"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "enabled"
+    t.boolean "enabled", default: true
   end
 
   create_table "category_products", id: false, force: :cascade do |t|
