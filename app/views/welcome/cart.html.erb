@@ -2,9 +2,10 @@
 <div class="" id="chec-div" style="position:revert">
 <div class="w-full rellative z-10 right-0 h-full overflow-x-hidden transform translate-x-0 
 transition ease-in-out duration-700" id="checkout">
-    <div class="flex items-end lg:flex-row flex-col justify-end" id="cart">
+<div class="container"> 
+    <div class="flex items-end lg:flex-row flex-col justify-between" id="cart">
         <div class="lg:w-1/2 md:w-full w-full lg:px-8 lg:py-14 md:px-6 px-4 md:py-8 py-4 bg-white dark:bg-gray-800
-         overflow-y-hidden overflow-x-hidden lg:h-screen h-auto" id="scroll" style="width:95%">
+         overflow-y-hidden overflow-x-hidden lg:h-screen h-auto" id="scroll" style="">
             <div class="flex items-center text-gray-500 hover:text-gray-600 dark:text-white cursor-pointer" 
             onclick="checkoutHandler(false)">
 
@@ -96,10 +97,10 @@ transition ease-in-out duration-700" id="checkout">
                 </div>
             </div>
         </div>
-        <div class="lg:w-96 md:w-8/12 w-full bg-gray-100 dark:bg-gray-900 h-full">
+        <div class="lg:w-96 md:w-8/12 w-full bg-gray-100 dark:bg-gray-900 h-full md:w-full">
             <div class="flex flex-col lg:h-screen h-auto lg:px-8 md:px-7 px-4 lg:py-20 md:py-10 py-6 justify-between overflow-y-auto">
                 <div>
-                    <p class="lg:text-4xl text-3xl font-black leading-9 text-gray-800 dark:text-white">Summary</p>
+                    <p class="lg:text-4xl text-3xl font-black leading-9 text-gray-800 dark:text-white">Chekout</p>
                     <div class="flex items-center justify-between pt-16">
                         <p class="text-base leading-none text-gray-800 dark:text-white">Subtotal</p>
                         <p class="text-base leading-none text-gray-800 dark:text-white">$9,000</p>
@@ -119,9 +120,10 @@ transition ease-in-out duration-700" id="checkout">
                         <p class="text-2xl font-bold leading-normal text-right text-gray-800 dark:text-white">$10,240</p>
                     </div>
                     <button onclick="checkoutHandler1(true)" class="text-base leading-none w-full py-5 bg-primary 
-                    border-gray-800 border focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 
+                    border-red border focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 
                     text-white dark:hover:bg-gray-700">Checkout</button>
                 </div>
+            </div>
             </div>
         </div>
     </div>
