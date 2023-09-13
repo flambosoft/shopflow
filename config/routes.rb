@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+
   devise_for :users
   devise_for :admins
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
@@ -10,6 +11,7 @@ Rails.application.routes.draw do
   namespace :admin do
     root to: "dashboard#index"
     resources :products
+    resources :lists
     get "dashboard", to: "dashboard#index"
   end
 
