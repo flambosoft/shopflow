@@ -1,6 +1,6 @@
 class ProductCharacteristic < ApplicationRecord
 
-  belongs_to :products
-  belongs_to :characteristics
+  belongs_to :product
+  belongs_to :characteristic
 
 end
