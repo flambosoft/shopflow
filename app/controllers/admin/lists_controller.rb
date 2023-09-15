@@ -1,5 +1,5 @@
 class Admin::ListsController < AdminController
-  before_action :set_list, only: %i[ show edit update destroy ]
+  before_action :set_list, only: %i[show edit update destroy]
 
   # GET /lists or /lists.json
   def index
@@ -22,7 +22,6 @@ class Admin::ListsController < AdminController
   # POST /lists or /lists.json
   def create
     @list = List.new(list_params)
-
     respond_to do |format|
       if @list.save
         format.html { redirect_to admin_lists_url, notice: "List was successfully created." }
@@ -49,7 +48,7 @@ class Admin::ListsController < AdminController
 
   # DELETE /lists/1 or /lists/1.json
   def destroy
-    @list.destroy
+    @list.destroy!
 
     respond_to do |format|
       format.html { redirect_to admin_lists_url, notice: "List was successfully destroyed." }
@@ -60,13 +59,13 @@ class Admin::ListsController < AdminController
   private
 
   # Use callbacks to share common setup or constraints between actions.
-  def set_list
-    @list = List.find(params[:id])
-  end
+    def set_list
+      @list = List.find(params[:id])
+    end
 
-  # Only allow a list of trusted parameters through.
+    # Only allow a list of trusted parameters through.
 
-  def list_params
-    params.require(:list).permit(:name, :name_ar)
-  end
+    def list_params
+      params.require(:list).permit(:name, :name_ar, product_ids: [])
+    end
 end

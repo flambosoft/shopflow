@@ -1,5 +1,4 @@
 class ListProduct < ApplicationRecord
-
-  belongs_to :products
-  belongs_to :lists
+  belongs_to :product
+  belongs_to :list
 end
