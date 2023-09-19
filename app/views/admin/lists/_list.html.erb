@@ -5,5 +5,13 @@
   <div class="flex">
     <div class="mr-2 font-semibold">Arabic name:</div><%= list.name_ar %>
   </div>
+  <div class="flex">
+    <div class="mr-2 font-semibold">Products</div>
+  </div>
+  <% list.products.each do |product| %>
+    <div class="flex">
+      <div class="ml-5 mr-2 font-semibold">#<%= product.id %></div><%= product.name %>
+    </div>
+  <% end %>
 
 </div>
