@@ -31,7 +31,7 @@ gem "cssbundling-rails"
 gem "jbuilder"
 
 # devise: Authentication
-gem 'devise'
+gem "devise"
 
 # Use Redis adapter to run Action Cable in production
 gem "redis", "~> 4.0"
@@ -61,11 +61,11 @@ end
 
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
-  gem "web-console"
-  gem 'rubocop', '~> 1.56', '>= 1.56.2', require: false
-  gem 'rubocop-rails', '~> 2.20', '>= 2.20.2', require: false
-  gem 'rubocop-performance', '~> 1.19', require: false
   gem "foreman"
+  gem "rubocop", "~> 1.56", ">= 1.56.2", require: false
+  gem "rubocop-performance", "~> 1.19", require: false
+  gem "rubocop-rails", "~> 2.20", ">= 2.20.2", require: false
+  gem "web-console"
 
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
