@@ -1,6 +1,5 @@
 @import "tom-select/dist/css/tom-select.css";
-@import "main.css";
-@import "all.min.css";
+@import "toastr";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

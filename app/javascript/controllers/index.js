@@ -4,8 +4,12 @@
 
 import { application } from "./application"
 
-import HelloController from "./hello_controller"
-application.register("hello", HelloController)
-
 import TomSelectController from "./tom_select_controller"
 application.register("tom_select", TomSelectController)
+
+import DarkLight from "./dark_light_controller"
+application.register("dark-light", DarkLight)
+import Flash from "./flash_controller"
+application.register("flash", Flash)
+import Sidebar from "./sidebar_controller"
+application.register("sidebar", Sidebar)

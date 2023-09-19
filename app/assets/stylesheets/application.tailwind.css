@@ -1,4 +1,4 @@
-@import "main.css";
+@import "main.css.scss";
 @import "all.min.css";
 @tailwind base;
 @tailwind components;

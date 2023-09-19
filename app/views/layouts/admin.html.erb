@@ -10,22 +10,18 @@
   <%= javascript_include_tag "admin", "data-turbo-track": "reload", defer: true %>
 </head>
 
-<body>
-<!-- Used by devise -->
-<!-- TODO: turn it into a toast message  -->
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
-
-<%= render partial: "layouts/admin_partials/navbar" %>
+<body class="bg-gray-50 dark:bg-gray-800" data-controller="sidebar">
+<%= flash_messages %>
+<%= render partial: "layouts/admin/navbar" %>
 <div class="flex pt-16 overflow-hidden bg-gray-50 dark:bg-gray-900">
 
-  <%= render partial: "layouts/admin_partials/sidebar" %>
+  <%= render partial: "layouts/admin/sidebar" %>
 
-  <div id="main-content" class="relative w-full h-full overflow-y-auto bg-white lg:ml-64 dark:bg-gray-900">
-    <main>
+  <div id="main-content" class="flex flex-col relative w-full h-screen overflow-y-auto bg-white lg:ml-64 dark:bg-gray-900">
+    <main class="flex-1">
       <%= yield %>
     </main>
-    <%= render partial: "layouts/admin_partials/footer" %>
+    <%= render partial: "layouts/admin/footer" %>
   </div>
 
 </div>
