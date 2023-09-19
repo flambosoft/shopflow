@@ -2,42 +2,42 @@
 <div class="col-span-3">
   <%= turbo_frame_tag "sidebar-frame" do %>
 
-<div class="px-4 py-3 shadow flex items-center gap-4">
-    <div class="flex-shrink-0">
-      <div class="rounded-full w-14 h-14 border border-gray-200 p-1 object-cover">
-        <%= image_tag("avatar.png")  %>
+    <div class="px-4 py-3 shadow flex items-center gap-4">
+      <div class="flex-shrink-0">
+        <div class="rounded-full w-14 h-14 border border-gray-200 p-1 object-cover">
+          <%= image_tag("avatar.png") %>
+        </div>
+      </div>
+      <div class="flex-grow">
+        <p class="text-gray-600">Hello,</p>
+        <h4 class="text-gray-800 font-medium"><%= current_user.firstname %> <%= current_user.lastname %></h4>
+        <p class="text-gray-800"><%= current_user.email %></p>
+        <p class="text-gray-800"><%= current_user.phone %></p>
+        <p class="text-gray-800"><%= current_user.address %></p>
       </div>
     </div>
-    <div class="flex-grow">
-      <p class="text-gray-600">Hello,</p>
-      <h4 class="text-gray-800 font-medium"><%= current_user.firstname %> <%= current_user.lastname %></h4>
-      <p class="text-gray-800"><%= current_user.email %></p>
-      <p class="text-gray-800"><%= current_user.phone %></p>
-      <p class="text-gray-800"><%= current_user.address %></p>
+
+
+    <div class="mt-6 bg-white shadow rounded p-4 divide-y divide-gray-200 space-y-4 text-gray-600">
+
+      <div class="space-y-1 pl-8 pt-4">
+        <%= link_to "My order history", profile_orders_path, data: { turbo_frame: "container-frame" }, class: "relative hover:text-primary block font-medium capitalize transition" %>
+
+        <%= link_to "My reviews", profile_reviews_path, data: { turbo_frame: "container-frame" }, class: "relative hover:text-primary block font-medium capitalize transition" %>
+
+      </div>
+
+      <div class="space-y-1 pl-8 pt-4">
+        <%= link_to "My Which list", profile_which_list_path, data: { turbo_frame: "container-frame" }, class: "relative hover:text-primary block font-medium capitalize transition" %>
+
+      </div>
+
+      <div class="space-y-1 pl-8">
+        <%= link_to "Manage Profile", profile_manage_path, data: { turbo_frame: "container-frame" }, class: "relative hover:text-primary block font-medium capitalize transition mt-2" %>
+      </div>
+
+
     </div>
-  </div>
-
-
-  <div class="mt-6 bg-white shadow rounded p-4 divide-y divide-gray-200 space-y-4 text-gray-600">
-
-    <div class="space-y-1 pl-8 pt-4">
-        <%= link_to "My order history", profile_orders_path, data: { turbo_frame: "container-frame" },  class: "relative hover:text-primary block font-medium capitalize transition" %>
-
-        <%= link_to "My reviews", profile_reviews_path, data: { turbo_frame: "container-frame" },  class: "relative hover:text-primary block font-medium capitalize transition" %>
-
-    </div>
-
-    <div class="space-y-1 pl-8 pt-4">
-      <%= link_to "My Wishlist", profile_wishlist_path, data: { turbo_frame: "container-frame" },  class: "relative hover:text-primary block font-medium capitalize transition" %>
-
-    </div>
-
-    <div class="space-y-1 pl-8">
-      <%= link_to "Manage Profile", profile_manage_path, data: { turbo_frame: "container-frame" },  class: "relative hover:text-primary block font-medium capitalize transition mt-2" %>
-    </div>
-
-
-  </div>
   <% end %>
 
 
