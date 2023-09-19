@@ -1,4 +1,4 @@
 web: unset PORT && env RUBY_DEBUG_OPEN=true bin/rails server
-js: yarn build --watch
-css: yarn build:css:application --watch
-css: yarn build:css:admin --watch
+js: bash -c 'source ~/.nvm/nvm.sh; nvm use; yarn build --reload'
+css: bash -c 'source ~/.nvm/nvm.sh; nvm use; yarn build:css:application --watch'
+css: bash -c 'source ~/.nvm/nvm.sh; nvm use; yarn build:css:admin --watch'

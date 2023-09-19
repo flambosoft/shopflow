@@ -57,7 +57,6 @@ gem "bootsnap", require: false
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
-  gem "foreman"
 end
 
 group :development do
@@ -66,6 +65,7 @@ group :development do
   gem 'rubocop', '~> 1.56', '>= 1.56.2', require: false
   gem 'rubocop-rails', '~> 2.20', '>= 2.20.2', require: false
   gem 'rubocop-performance', '~> 1.19', require: false
+  gem "foreman"
 
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
