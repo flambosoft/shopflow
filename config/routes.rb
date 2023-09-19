@@ -19,6 +19,13 @@ Rails.application.routes.draw do
   get "/shop", to: "welcome#shop"
   get "/about", to: "welcome#about"
   get "/wishlist", to: "welcome#wishlist"
-  get "/profile", to: "profile#index"
   get "/cart", to: "welcome#cart"
+
+  #Profile
+  get "/profile", to: "profile#index"
+  get "/profile/orders", to: "profile#order"
+  get "/profile/reviews", to: "profile#reviews"
+  get "/profile/wishlist", to: "profile#wishlist"
+  get "/profile/manage", to: "profile#manage"
+
 end

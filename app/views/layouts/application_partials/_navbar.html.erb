@@ -54,7 +54,12 @@
           <button class= "text-gray-200 hover:text-white transition" >About Us</button>
         <%end %>
       </div>
-      <a href="#" class="text-gray-200 hover:text-white transition">Login</a>
+        <% if current_user.present?  %>
+          <%= button_to "logout", destroy_user_session_path, method: :delete, class: "text-gray-200 hover:text-white transition" %>
+        <% else %>
+          <a href="/users/sign_in" class="text-gray-200 hover:text-white transition">Login</a>
+        <% end %>
+
     </div>
   </div>
 </nav>

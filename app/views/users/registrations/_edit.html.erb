@@ -1,0 +1,63 @@
+<!-- edit_profile -->
+<div class="flex flex-col col-span-9 max-w-lg mx-auto shadow px-6 py-7 rounded overflow-hidden">
+
+<h2 class="text-2xl uppercase font-medium mb-1">Edit <%= resource_name.to_s.humanize %></h2>
+
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+    <%= render "users/shared/error_messages", resource: resource %>
+
+      <div class="space-y-2">
+
+        <div class="field">
+          <%= f.label :firstname, class: 'text-gray-600 mb-1 block' %><br />
+          <%= f.email_field :firstname, autofocus: true, autocomplete: "firstname", class: 'block w-full border border-gray-300 px-4 py-3 text-gray-600 text-sm rounded focus:ring-0 focus:border-primary placeholder-gray-400', placeholder: 'Firstname' %>
+        </div>
+
+        <div class="field">
+          <%= f.label :lastname, class: 'text-gray-600 mb-1 block' %><br />
+          <%= f.email_field :lastname, autofocus: true, autocomplete: "lastname", class: 'block w-full border border-gray-300 px-4 py-3 text-gray-600 text-sm rounded focus:ring-0 focus:border-primary placeholder-gray-400', placeholder: 'Lastname' %>
+        </div>
+
+        <div class="field">
+          <%= f.label :email, class: 'text-gray-600 mb-1 block' %><br />
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'block w-full border border-gray-300 px-4 py-3 text-gray-600 text-sm rounded focus:ring-0 focus:border-primary placeholder-gray-400', placeholder: 'Email' %>
+        </div>
+
+        <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+          <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+        <% end %>
+
+        <div class="field">
+          <%= f.label :password, class: 'text-gray-600 mb-1 block' %> <i class='text-gray-600'>(leave blank if you don't want to change it)</i><br />
+          <%= f.password_field :password, autocomplete: "new-password", class: 'block w-full border border-gray-300 px-4 py-3 text-gray-600 text-sm rounded focus:ring-0 focus:border-primary placeholder-gray-400', placeholder: '*********' %>
+          <% if @minimum_password_length %>
+            <br />
+            <em><%= @minimum_password_length %> characters minimum</em>
+          <% end %>
+        </div>
+
+        <div class="field">
+          <%= f.label :password_confirmation, class: 'text-gray-600 mb-1 block' %><br />
+          <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'block w-full border border-gray-300 px-4 py-3 text-gray-600 text-sm rounded focus:ring-0 focus:border-primary placeholder-gray-400', placeholder: '*********' %>
+        </div>
+
+        <div class="field">
+          <%= f.label :current_password, class: 'text-gray-600 mb-1 block' %> <i class='text-gray-600'>(we need your current password to confirm your changes)</i><br />
+          <%= f.password_field :current_password, autocomplete: "current-password", class: 'block w-full border border-gray-300 px-4 py-3 text-gray-600 text-sm rounded focus:ring-0 focus:border-primary placeholder-gray-400', placeholder: '*********' %>
+        </div>
+
+        <div class="actions">
+          <%= f.submit "Update", class: 'block w-full cursor-pointer py-2 text-center text-white bg-primary border border-primary rounded hover:bg-transparent hover:text-primary transition uppercase font-roboto font-medium' %>
+        </div>
+
+      </div>
+
+  <% end %>
+
+
+  <div class="mt-5">
+    <div class="text-xl font-semibold">Unhappy?</div>
+    <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?", turbo_confirm: "Are you sure?" }, method: :delete, class: 'block w-full cursor-pointer py-2 text-center text-white bg-red-600 border border-primary rounded hover:bg-transparent hover:text-primary transition uppercase font-roboto font-medium' %>
+  </div>
+
+</div>

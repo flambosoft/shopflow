@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_09_12_104335) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_18_094739) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -103,7 +103,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_12_104335) do
     t.index ["admin_id"], name: "index_notifications_on_admin_id"
   end
 
-  create_table "oder_items", force: :cascade do |t|
+  create_table "order_items", force: :cascade do |t|
     t.bigint "order_id"
     t.integer "quantity", default: 1, null: false
     t.integer "price", default: 0, null: false
@@ -111,7 +111,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_12_104335) do
     t.text "orderable_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["order_id"], name: "index_oder_items_on_order_id"
+    t.index ["order_id"], name: "index_order_items_on_order_id"
   end
 
   create_table "order_statuses", force: :cascade do |t|
@@ -206,7 +206,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_12_104335) do
   add_foreign_key "list_products", "lists"
   add_foreign_key "list_products", "products"
   add_foreign_key "notifications", "admins"
-  add_foreign_key "oder_items", "orders"
+  add_foreign_key "order_items", "orders"
   add_foreign_key "order_statuses", "admins"
   add_foreign_key "order_statuses", "orders"
   add_foreign_key "orders", "users"
