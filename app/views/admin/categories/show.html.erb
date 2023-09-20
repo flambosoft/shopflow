@@ -1,10 +1,9 @@
-<p style="color: green"><%= notice %></p>
 
-<%= render @category %>
+
 
 <div>
 
-
+  <%= render @category %>
 
   <div
        class="inline-flex my-5 items-center px-3 py-2 text-sm font-medium text-center text-white bg-red-700 rounded-lg hover:bg-red-800 focus:ring-4 focus:ring-red-300 dark:focus:ring-red-900">
@@ -13,7 +12,7 @@
             d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z"
             clip-rule="evenodd"></path>
     </svg>
-    <%= button_to "Destroy this category", @category, method: :delete %>
+    <%= button_to "Destroy this category", admin_category_path(@category), method: :delete %>
   </div>
   <div>
   <%= link_to "Edit this category", edit_admin_category_path(@category)%> |
