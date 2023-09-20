@@ -1,26 +1,47 @@
-<h2>Log in</h2>
+<!-- login -->
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+<div class="contain">
+  <div class="max-w-lg mx-auto shadow px-6 py-7 rounded overflow-hidden">
+
+    <h2 class="text-2xl uppercase font-medium mb-1">Login</h2>
+    <p class="text-gray-600 mb-6 text-sm">
+      welcome back customer
+    </p>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <div class="space-y-2">
+
+        <div class="field">
+          <%= f.label :email, class: "text-gray-600 mb-2 block" %><br />
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "block w-full border border-gray-300 px-4 py-3 text-gray-600 text-sm rounded focus:ring-0 focus:border-primary placeholder-gray-400", placeholder: "youremail.@domain.com" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :password, class: "text-gray-600 mb-2 block" %><br />
+          <%= f.password_field :password, autocomplete: "current-password", class: "block w-full border border-gray-300 px-4 py-3 text-gray-600 text-sm rounded focus:ring-0 focus:border-primary placeholder-gray-400", placeholder: "*******" %>
+        </div>
+
+      </div>
+
+      <% if devise_mapping.rememberable? %>
+        <div class="flex items-center justify-between mt-6">
+          <div class="flex items-center">
+            <div class="field">
+              <%= f.check_box :remember_me, class: "text-primary focus:ring-0 rounded-sm cursor-pointer" %>
+              <%= f.label :remember_me, class: "text-gray-600 ml-3 cursor-pointer" %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+
+
+      <div class="actions mt-4">
+        <%= f.submit "Log in", class: "block w-full py-2 text-center cursor-pointer text-white bg-primary border border-primary rounded hover:bg-transparent hover:text-primary transition uppercase font-roboto font-medium" %>
+      </div>
+    <% end %>
+
+    <p class="mt-4 text-center text-gray-600">Don't have account? <a href="/users/sign_up"
+                                                                     class="text-primary">Register
+      now</a></p>
   </div>
-
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
-
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
-    </div>
-  <% end %>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div>
-<% end %>
-
-<%= render "users/shared/links" %>
+</div>
+<!-- ./login -->
