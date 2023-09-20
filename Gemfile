@@ -61,6 +61,7 @@ end
 
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
+  gem 'faker'
   gem "foreman"
   gem "rubocop", "~> 1.56", ">= 1.56.2", require: false
   gem "rubocop-performance", "~> 1.19", require: false
