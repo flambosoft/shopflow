@@ -8,7 +8,7 @@ class ProfileController < ApplicationController
 
   def reviews; end
 
-  def which_list; end
+  def wishlist; end
 
   def manage; end
 

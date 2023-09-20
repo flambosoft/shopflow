@@ -5,5 +5,5 @@ class WelcomeController < ApplicationController
 
   def about; end
 
-  def which_list; end
+  def wishlist; end
 end
