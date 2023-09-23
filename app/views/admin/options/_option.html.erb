@@ -1,0 +1,19 @@
+<div id="<%= dom_id option %>" class="flex flex-col space-y-4 pt-4 pb-4  text-gray-900 dark:text-white">
+  <div class="flex">
+    <div class="mr-2 font-semibold ">Name :</div><%= option.name %>
+  </div>
+  <div class="flex">
+    <div class="mr-2 font-semibold">Type :</div><%= option.option_type %>
+  </div>
+  <div class="flex">
+    <div class="mr-2 font-semibold">Description :</div><%= option.description %>
+  </div>
+  <% if option.choice? %>
+    <div class="flex">
+      <div class="mr-2 font-semibold w-1/3">Option Values: </div>
+      <div class="mr-2 font-semibold w-2/3">
+        <%= safe_join(option.option_values.map(&:value), '<br>'.html_safe) %>
+      </div>
+    </div>
+  <% end %>
+</div>

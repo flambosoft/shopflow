@@ -10,19 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_09_18_094739) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_20_144450) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
+    t.string "role", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "role"
     t.index ["email"], name: "index_admins_on_email", unique: true
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
   end
@@ -103,6 +103,23 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_18_094739) do
     t.index ["admin_id"], name: "index_notifications_on_admin_id"
   end
 
+  create_table "option_values", force: :cascade do |t|
+    t.string "value"
+    t.bigint "option_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["option_id"], name: "index_option_values_on_option_id"
+  end
+
+  create_table "options", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.integer "option_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_options_on_name", unique: true
+  end
+
   create_table "order_items", force: :cascade do |t|
     t.bigint "order_id"
     t.integer "quantity", default: 1, null: false
@@ -146,6 +163,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_18_094739) do
     t.index ["product_id"], name: "index_product_characteristics_on_product_id"
   end
 
+  create_table "product_options", force: :cascade do |t|
+    t.bigint "product_id", null: false
+    t.bigint "option_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["option_id"], name: "index_product_options_on_option_id"
+    t.index ["product_id"], name: "index_product_options_on_product_id"
+  end
+
   create_table "products", force: :cascade do |t|
     t.string "name", null: false
     t.text "short_description"
@@ -159,6 +185,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_18_094739) do
     t.string "slug"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_products_on_name", unique: true
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -190,6 +217,27 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_18_094739) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "variant_values", force: :cascade do |t|
+    t.bigint "variant_id", null: false
+    t.bigint "option_value_id", null: false
+    t.string "value"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["option_value_id"], name: "index_variant_values_on_option_value_id"
+    t.index ["variant_id"], name: "index_variant_values_on_variant_id"
+  end
+
+  create_table "variants", force: :cascade do |t|
+    t.string "sku"
+    t.decimal "price"
+    t.integer "inventory_count"
+    t.bigint "product_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["product_id"], name: "index_variants_on_product_id"
+    t.index ["sku"], name: "index_variants_on_sku", unique: true
+  end
+
   create_table "wilayas", force: :cascade do |t|
     t.string "name", null: false
     t.string "name_ar"
@@ -206,12 +254,18 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_18_094739) do
   add_foreign_key "list_products", "lists"
   add_foreign_key "list_products", "products"
   add_foreign_key "notifications", "admins"
+  add_foreign_key "option_values", "options"
   add_foreign_key "order_items", "orders"
   add_foreign_key "order_statuses", "admins"
   add_foreign_key "order_statuses", "orders"
   add_foreign_key "orders", "users"
   add_foreign_key "product_characteristics", "characteristics"
   add_foreign_key "product_characteristics", "products"
+  add_foreign_key "product_options", "options"
+  add_foreign_key "product_options", "products"
   add_foreign_key "reviews", "products"
   add_foreign_key "reviews", "users"
+  add_foreign_key "variant_values", "option_values"
+  add_foreign_key "variant_values", "variants"
+  add_foreign_key "variants", "products"
 end

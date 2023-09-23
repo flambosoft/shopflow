@@ -82,7 +82,8 @@
         </td>
         <td class="flex items-center px-6 py-4 space-x-3">
           <a href="<%= edit_admin_product_path(product) %>" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-          <a href="#" class="font-medium text-red-600 dark:text-red-500 hover:underline">Remove</a>
+          <%= button_to 'Remove', [:admin, product], method: :delete, class: 'font-medium text-red-600 dark:text-red-500 hover:underline',
+                        form: {data: {turbo_confirm: 'Are you sure?'}} %>
         </td>
       </tr>
     <% end %>

@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
+  resources :options_controllers
 
   devise_for :users, controllers: {
     sessions: 'users/sessions'
   }
-  
+
   devise_for :admins, path: 'admins', controllers: {
     sessions: 'admins/sessions'
   }
@@ -18,6 +19,7 @@ Rails.application.routes.draw do
     root to: "dashboard#index"
     resources :products
     resources :lists
+    resources :options
     get "dashboard", to: "dashboard#index"
   end
 
