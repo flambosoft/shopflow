@@ -11,8 +11,7 @@
 <body>
 <!-- Used by devise -->
 <!-- TODO: turn it into a toast message  -->
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
+<%= flash_messages %>
 <%= render partial: 'layouts/front/header' %>
 <%= yield %>
 <%= render partial: 'layouts/front/footer' %>
