@@ -1,6 +1,7 @@
 class VariantValue < ApplicationRecord
   belongs_to :variant
-  belongs_to :option_value
+  belongs_to :option_value, optional: true
+  belongs_to :option
 
   validates :value, presence: true
   validate :value_matches_option_type

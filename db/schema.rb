@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_09_20_144450) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_24_150605) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -34,7 +34,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_20_144450) do
     t.string "slug"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "enabled", default: true
+    t.boolean "enabled"
   end
 
   create_table "category_products", id: false, force: :cascade do |t|
@@ -223,6 +223,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_20_144450) do
     t.string "value"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "option_id"
     t.index ["option_value_id"], name: "index_variant_values_on_option_value_id"
     t.index ["variant_id"], name: "index_variant_values_on_variant_id"
   end
