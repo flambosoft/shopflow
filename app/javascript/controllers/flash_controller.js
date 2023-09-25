@@ -15,7 +15,7 @@ export default class extends Controller {
             onclick: null,
             fadeIn: 300,
             fadeOut: 1000,
-            timeOut: 5000,
+            timeOut: 3000,
             extendedTimeOut: 1000,
         };
 
