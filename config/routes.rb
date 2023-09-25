@@ -14,13 +14,13 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   namespace :admin do
+    resources :coupons
     resources :dashboard
     resources :categories
-    root to: "dashboard#index"
     resources :products
     resources :lists
     resources :options
-    get "dashboard", to: "dashboard#index"
+    root to: "dashboard#index"
   end
 
   root "welcome#index"

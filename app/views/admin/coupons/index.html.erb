@@ -1,0 +1,81 @@
+<div class="p-4 bg-white block sm:flex items-center justify-between border-b border-gray-200 lg:mt-1.5 dark:bg-gray-800 dark:border-gray-700">
+  <div class="w-full mb-1">
+    <div class="mb-4">
+      <h1 class="text-xl font-semibold text-gray-900 sm:text-2xl dark:text-white">All coupons</h1>
+    </div>
+    <div class="items-center justify-between block sm:flex md:divide-x md:divide-gray-100 dark:divide-gray-700">
+      <div class="flex items-center mb-4 sm:mb-0">
+        <form class="sm:pr-3" action="#" method="GET">
+          <label for="products-search" class="sr-only">Search</label>
+          <div class="relative w-48 mt-1 sm:w-64 xl:w-96">
+            <input type="text" id="products-search" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search for products">
+          </div>
+        </form>
+      </div>
+      <%= link_to "Add new coupon", new_admin_coupon_path, class: "text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800" %>
+
+    </div>
+  </div>
+</div>
+
+<div class="relative overflow-x-auto shadow-md">
+  <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+    <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+    <tr>
+      <th scope="col" class="px-6 py-3">
+        code
+      </th>
+      <th scope="col" class="px-6 py-3">
+        Percent
+      </th>
+      <th scope="col" class="px-6 py-3">
+        Type
+      </th>
+      <th scope="col" class="px-6 py-3">
+        Expiry date
+      </th>
+      <th scope="col" class="px-6 py-3">
+        Enabled
+      </th>
+      <th scope="col" class="px-6 py-3">
+        Validity
+      </th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @coupons.each do |coupon| %>
+      <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+          <%= link_to admin_coupons_path(coupon) do %>
+            <%= coupon.code %>
+          <% end %>
+        </th>
+        <td class="px-6 py-4">
+          <%= coupon.percent %>
+        </td>
+        <td class="px-6 py-4">
+          <%= coupon.coupon_type %>
+        </td>
+        <td class="px-6 py-4">
+          <%= coupon.expiry_date %>
+        </td>
+        <td class="px-6 py-4">
+          <%= coupon.enabled %>
+        </td>
+        <td class="px-6 py-4">
+          <%= coupon.validity %>
+        </td>
+        <td class="px-6 py-4">
+          <span class="flex items-center text-sm font-medium text-gray-900 dark:text-white"><span class="flex w-2.5 h-2.5 <%= coupon.enabled == true ? "bg-green-500" : "bg-red-500" %> rounded-full mr-1.5 flex-shrink-0"></span><%= coupon.enabled == true ? "Enabled" : "Disabled" %></span>
+        </td>
+        <td class="flex items-center px-6 py-4 space-x-3">
+          <a href="<%= edit_admin_coupon_path(coupon) %>" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+          <%= button_to 'Remove', [:admin, coupon], method: :delete, class: 'font-medium text-red-600 dark:text-red-500 hover:underline',
+                        form: {data: {turbo_confirm: 'Are you sure?'}} %>
+        </td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>
+
