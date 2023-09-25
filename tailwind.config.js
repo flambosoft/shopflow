@@ -1,3 +1,5 @@
+const defaultTheme = require('tailwindcss/defaultTheme')
+
 module.exports = {
   content: [
     './app/views/**/*.html.erb',
@@ -13,6 +15,8 @@ module.exports = {
       md: "768px",
       lg: "992px",
       xl: "1200px",
+      xs: {'max': '575px'},
+      ...defaultTheme.screens,
     },
     container: {
       center: true,

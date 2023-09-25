@@ -6,4 +6,6 @@ class WelcomeController < ApplicationController
   def about; end
 
   def wishlist; end
+
+  def show_product; end
 end

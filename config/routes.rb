@@ -28,6 +28,7 @@ Rails.application.routes.draw do
   get "/about", to: "welcome#about"
   get "/wishlist", to: "welcome#wishlist"
   get "/cart", to: "welcome#cart"
+  get "/product", to: "welcome#show_product"
 
   #Profile
   get "/profile", to: "profile#index"
