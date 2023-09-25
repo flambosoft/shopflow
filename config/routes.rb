@@ -2,7 +2,8 @@ Rails.application.routes.draw do
   resources :options_controllers
 
   devise_for :users, controllers: {
-    sessions: 'users/sessions'
+    sessions: 'users/sessions',
+    registrations: 'users/registrations'
   }
 
   devise_for :admins, path: 'admins', controllers: {

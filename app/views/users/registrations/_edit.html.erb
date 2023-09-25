@@ -23,6 +23,16 @@
           <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'block w-full border border-gray-300 px-4 py-3 text-gray-600 text-sm rounded focus:ring-0 focus:border-primary placeholder-gray-400', placeholder: 'Email' %>
         </div>
 
+        <div class="field">
+          <%= f.label :phone, class: 'text-gray-600 mb-1 block' %><br />
+          <%= f.phone_field :phone, autofocus: true, autocomplete: "phone", class: 'block w-full border border-gray-300 px-4 py-3 text-gray-600 text-sm rounded focus:ring-0 focus:border-primary placeholder-gray-400', placeholder: '066666666' %>
+        </div>
+
+        <div class="field">
+          <%= f.label :address, class: 'text-gray-600 mb-1 block' %><br />
+          <%= f.text_field :address, autofocus: true, autocomplete: "address", class: 'block w-full border border-gray-300 px-4 py-3 text-gray-600 text-sm rounded focus:ring-0 focus:border-primary placeholder-gray-400', placeholder: 'Address' %>
+        </div>
+
         <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
           <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
         <% end %>
