@@ -29,4 +29,32 @@
   <div class="flex">
     <div class="mr-2 font-semibold">Enabled:</div><%= product.enabled %>
   </div>
+
+  <div class="flex">
+    <div class="mr-2 font-semibold">Options</div>
+
+    <ul class="mt-5 grid grid-cols-1 md:grid-cols-3 gap-4">
+      <% product.options.each_with_index do |option, index| %>
+        <div class="">
+          <div class="m-2 font-semibold">Option <%= "#{index + 1}" %> </div>
+          <li class="flex flex-row gap-2"><div>Type</div>: <%= option.option_type %></li>
+          <li class="flex flex-row gap-2"><div>Name</div>: <%= option.name %> </li>
+          <li class="flex flex-row gap-2"><div>description</div>: <%= option.description %></li>
+
+          <% if option.option_type == "choice" %>
+
+            <div class="m-2 font-semibold">Option values</div>
+            <% option.option_values.each_with_index do |option_value, index| %>
+              <li class="flex flex-row gap-2">
+                <div>value <%= "#{index + 1}" %></div>: <%= option_value.value %>
+              </li>
+            <% end %>
+
+          <% end %>
+        </div>
+      <% end %>
+    </ul>
+  </div>
+
+
 </div>
