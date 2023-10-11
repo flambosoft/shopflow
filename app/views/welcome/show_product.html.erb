@@ -1,28 +1,36 @@
- <!-- breadcrumb -->
-<div class="container py-4 flex items-center gap-3">
-  <a href='/' class="text-primary text-base">
-    <i class="fa-solid fa-house"></i>
-  </a>
-  <span class="text-sm text-gray-400">
-            <i class="fa-solid fa-chevron-right"></i>
-        </span>
-  <p class="text-gray-600 font-medium">Product</p>
-</div>
+<!-- breadcrumb -->
+<!--<div class="container py-4 flex items-center gap-3">-->
+<!--  <a href='/' class="text-primary text-base">-->
+<!--    <i class="fa-solid fa-house"></i>-->
+<!--  </a>-->
+<!--  <span class="text-sm text-gray-400">-->
+<!--            <i class="fa-solid fa-chevron-right"></i>-->
+<!--        </span>-->
+<!--  <p class="text-gray-600 font-medium">Product</p>-->
+<!--</div>-->
 <!-- ./breadcrumb -->
 <!-- product-detail -->
-<div class="container grid lg:grid-cols-2 md:grid-cols-2 gap-6 xs:grid-cols-1">
-  <div>
-    <%= image_tag("products/product1.jpg") %>
-    <div class="grid grid-cols-5 gap-4 mt-4">
-      <%= image_tag("products/product8.jpg", :class => "w-full cursor-pointer border border-sky-500")  %>
-      <%= image_tag("products/product7.jpg", :class => "w-full cursor-pointer border") %>
-      <%= image_tag("products/product6.jpg", :class => "w-full cursor-pointer border") %>
-      <%= image_tag("products/product5.jpg", :class => "w-full cursor-pointer border") %>
-      <%= image_tag("products/product3.jpg", :class => "w-full cursor-pointer border") %>
-      <%= image_tag("products/product2.jpg", :class => "w-full cursor-pointer border") %>
+
+<div class="container grid lg:grid-cols-2 md:grid-cols-2 gap-6 xs:grid-cols-1 mt-8">
+  <div class="relative overflow-hidden w-full">
+    <!-- Carousel wrapper -->
+    <div>
+      <div class=" relative h-56 rounded-lg md:h-96" data-controller="product">
+
+        <%= image_tag("products/product8.jpg", id: "big-image", :class => "absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 cursor-zoom-in", data: { action: "mouseover->product#bigImageZoom", "product-target": "output" }) %>
+
+      </div>
+      <div id="img-container" class="grid grid-cols-5 gap-4 mt-10" data-controller="product">
+        <%= image_tag("products/product4.jpg", class: "w-full cursor-pointer border border-sky-500", data: { action: "click->product#changeImageSlide" }) %>
+        <%= image_tag("products/product7.jpg", :class => "w-full cursor-pointer border", data: { action: "click->product#changeImageSlide" }) %>
+        <%= image_tag("products/product6.jpg", :class => "w-full cursor-pointer border", data: { action: "click->product#changeImageSlide" }) %>
+        <%= image_tag("products/product5.jpg", :class => "w-full cursor-pointer border", data: { action: "click->product#changeImageSlide" }) %>
+        <%= image_tag("products/product3.jpg", :class => "w-full cursor-pointer border", data: { action: "click->product#changeImageSlide" }) %>
+        <%= image_tag("products/product2.jpg", :class => "w-full cursor-pointer border", data: { action: "click->product#changeImageSlide" }) %>
+      </div>
+
     </div>
   </div>
-
   <div>
     <h2 class="text-3xl font-medium uppercase mb-2">Italian L Shape Sofa</h2>
     <div class="flex items-center mb-4">
@@ -154,10 +162,15 @@
     </div>
   </div>
 </div>
+
+
+
+
+
 <!-- ./product-detail -->
 <div class="container pb-16">
   <h3 class="border-b border-gray-200 font-roboto text-gray-800 pb-3 font-medium">Product details</h3>
-  <div class="w-3/5 pt-6">
+  <div class="lg:w-3/5 pt-6">
     <div class="text-gray-600">
       <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur necessitatibus deleniti natus
         dolore cum maiores suscipit optio itaque voluptatibus veritatis tempora iste facilis non aut
@@ -186,6 +199,7 @@
     </table>
   </div>
 </div>
+
 <!-- ./description -->
 <!-- related product -->
 <div class="container pb-16">

@@ -15,3 +15,6 @@ import Sidebar from "./sidebar_controller"
 application.register("sidebar", Sidebar)
 import OptionForm from "./option_form_controller"
 application.register("option-form", OptionForm)
+
+import Product from "./product_controller"
+application.register("product", Product)
